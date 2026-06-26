@@ -8,6 +8,11 @@ const allowedOrigins = [
   "https://stack-prep-phi.vercel.app"
 ];
 
+app.options("*", cors({
+  origin: allowedOrigins,
+  credentials: true,
+}));
+
 app.use(cors({
   origin: function (origin, callback) {
     if (!origin || allowedOrigins.includes(origin)) {
