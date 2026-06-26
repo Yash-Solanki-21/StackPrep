@@ -1,5 +1,6 @@
 import "./CodingPage.css"
 import { useEffect } from "react";
+import axiosInstance from "../../utils/axiosInstance";
 
 import QuestionDescription from "./QuestionDescription";
 import CodeEditor from "./CodeEditor";
