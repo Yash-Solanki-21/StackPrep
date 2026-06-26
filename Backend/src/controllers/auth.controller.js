@@ -99,6 +99,11 @@ const loginUser = async(req, res)=>{
   JSON.stringify(response.data.user)
 );
 
+    const token =
+  req.cookies?.token ||
+  req.header("Authorization")?.replace("Bearer ", "");
+
+
         
     } catch (error) {
         return res.status(500).json({
