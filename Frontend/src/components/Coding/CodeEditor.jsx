@@ -1,5 +1,6 @@
 import {useEffect, useState } from "react";
 import Editor, {loader} from "@monaco-editor/react";
+import toast from "react-hot-toast";
 import "./CodeEditor.css";
 import axiosInstance from "../../utils/axiosInstance";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
@@ -63,8 +64,7 @@ const handleSubmit = async () => {
         language: lang,
       }
     );
-    console.log(res.data);
-    alert("Solution Submitted Successfully");
+    toast.success("Solution Submitted Successfully");
   } catch (error) {
     console.log(error);
   }
@@ -154,7 +154,7 @@ const handleSubmit = async () => {
             fontWeight: 200,
             minimap: { enabled: false },
             scrollBeyondLastLine: false,
-            fontFamily: "",
+            fontFamily: "Fira Code, Consolas, monospace",
             fontLigatures: true,
             lineNumbers: "on",
             automaticLayout: true,
