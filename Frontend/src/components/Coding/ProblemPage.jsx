@@ -20,13 +20,12 @@ export default function ProblemPage({ onSelectProblem }) {
   const [filter, setFilter]     = useState("All");
   const [activeId, setActiveId] = useState(null);
 
-  // Backend /submissions/my returns { totalSolved, easy, medium, hard }
-  const [stats, setStats] = useState({ totalSolved: 0, easy: 0, medium: 0, hard: 0 });
-
-  // Backend /problems/stats returns { totalQuestions, easyQuestions, mediumQuestions, hardQuestions }
+   
   const [problemStats, setProblemStats] = useState({
     totalQuestions: 0, easyQuestions: 0, mediumQuestions: 0, hardQuestions: 0,
   });
+
+  const [stats, setStats] = useState({ totalSolved: 0, easy: 0, medium: 0, hard: 0, solvedIds: [] });
 
   const handleClick = async (p) => {
     setActiveId(p._id);
@@ -78,6 +77,9 @@ useEffect(() => {
     { name: "Medium", solved: stats.medium, total: problemStats.mediumQuestions  },
     { name: "Hard",   solved: stats.hard,   total: problemStats.hardQuestions    },
   ];
+
+  const solvedSet = new Set(stats.solvedIds?.map(String) || []);
+  const isSolved = (id) => solvedSet.has(String(id));
 
   if (loading) {
     return (
@@ -160,10 +162,10 @@ useEffect(() => {
                 <span className="cpp-num">{i + 1}.</span>
 
                 <span className="cpp-title-cell">
-                  {p.isSolved
-                    ? <CheckCircle2 size={15} className="cpp-icon-solved" />
-                    : <Circle size={15} className="cpp-icon-unsolved" />
-                  }
+                 {isSolved(p._id)
+  ? <CheckCircle2 size={15} className="cpp-icon-solved" />
+  : <Circle size={15} className="cpp-icon-unsolved" />
+}
                   <span>{p.title}</span>
                 </span>
 
@@ -181,9 +183,9 @@ useEffect(() => {
                 </span>
 
                 <span>
-                  {p.isSolved
+                  {isSolved(p._id)
                     ? <span className="cpp-status-solved">✓ Solved</span>
-                    : <span className="cpp-status-unsolved">Unsolved</span>}
+                    : <span className="cpp-status-unsolved">Unsolved</span>}                  
                 </span>
 
                 <span className="cpp-chevron-wrap"><ChevronRight size={15} /></span>

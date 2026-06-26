@@ -35,37 +35,38 @@ try {
 
 const getMySubmissions = async (req, res) => {
   try {
-
-    const solved = await Submission.find({
+    // 1. Fetch all accepted submissions for the user and populate the problem details
+    const acceptedSubmissions = await Submission.find({
       userId: req.user._id,
       status: "Accepted"
     }).populate("problemId", "difficulty");
 
-    const uniqueProblems = new Map();
-
-    solved.forEach((s) => {
-      uniqueProblems.set(
-        s.problemId._id.toString(),
-        s.problemId
-      );
+    // 2. Filter out null/invalid problem entries and extract unique problem data
+    const uniqueProblemsMap = new Map();
+    acceptedSubmissions.forEach(sub => {
+      if (sub.problemId && sub.problemId._id) {
+        uniqueProblemsMap.set(sub.problemId._id.toString(), sub.problemId.difficulty);
+      }
     });
 
-    const problems = [...uniqueProblems.values()];
+    // 3. Extract unique solved IDs
+    const solvedIds = Array.from(uniqueProblemsMap.keys());
 
-    const easy = problems.filter(
-      p => p.difficulty === "Easy"
-    ).length;
+    // 4. Calculate difficulty counts based on unique solved problems
+    let easy = 0;
+    let medium = 0;
+    let hard = 0;
 
-    const medium = problems.filter(
-      p => p.difficulty === "Medium"
-    ).length;
+    uniqueProblemsMap.forEach((difficulty) => {
+      if (difficulty === "Easy") easy++;
+      if (difficulty === "Medium") medium++;
+      if (difficulty === "Hard") hard++;
+    });
 
-    const hard = problems.filter(
-      p => p.difficulty === "Hard"
-    ).length;
-
+    // 5. Return the exact structure expected by the frontend
     return res.json({
-      totalSolved: problems.length,
+      solvedIds,
+      totalSolved: solvedIds.length,
       easy,
       medium,
       hard
