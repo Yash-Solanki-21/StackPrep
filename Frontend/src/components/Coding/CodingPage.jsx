@@ -1,4 +1,5 @@
 import "./CodingPage.css"
+import { useEffect } from "react";
 
 import QuestionDescription from "./QuestionDescription";
 import CodeEditor from "./CodeEditor";
