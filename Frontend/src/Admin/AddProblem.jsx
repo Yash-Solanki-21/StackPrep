@@ -57,7 +57,7 @@ export default function AddProblem() {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/v1/problems/",
+        `${import.meta.env.VITE_API_URL}/api/v1/problems/`,
         {
           title,
           description,

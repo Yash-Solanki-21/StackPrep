@@ -16,7 +16,7 @@ const AdminSidebar = () => {
 const fetchStats = async () => {
   try {
     const res = await axios.get(
-      "http://localhost:3000/api/v1/problems/stats"
+      `${import.meta.env.VITE_API_URL}/api/v1/problems/stats`
     );
 
     setStats(res.data);

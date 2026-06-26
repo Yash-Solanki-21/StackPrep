@@ -13,7 +13,7 @@ const ProblemList = () => {
   if (!confirmDelete) return;
   try {
     await axios.delete(
-      `http://localhost:3000/api/v1/problems/${id}`
+      `${import.meta.env.VITE_API_URL}/api/v1/problems/${id}`
     );
 
     setProblems(
@@ -36,7 +36,7 @@ const ProblemList = () => {
   const fetchProblems = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3000/api/v1/problems/"
+        `${import.meta.env.VITE_API_URL}/api/v1/problems/`
       );
 
       setProblems(response.data);
