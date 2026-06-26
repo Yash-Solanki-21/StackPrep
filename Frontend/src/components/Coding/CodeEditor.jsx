@@ -31,7 +31,7 @@ public:
 };`,
 };
 
-export default function CodeEditor({problem}) {
+export default function CodeEditor({problem, onSubmitSuccess}) {
   const [lang, setLang] = useState("JavaScript");
   const [code, setCode] = useState(LANGUAGES["JavaScript"]);
   const [theme, setTheme] = useState("github-dark");
@@ -65,6 +65,7 @@ const handleSubmit = async () => {
       }
     );
     toast.success("Solution Submitted Successfully");
+    onSubmitSuccess();
   } catch (error) {
     console.log(error);
   }
@@ -154,7 +155,7 @@ const handleSubmit = async () => {
             fontWeight: 200,
             minimap: { enabled: false },
             scrollBeyondLastLine: false,
-            fontFamily: "Fira Code, Consolas, monospace",
+            fontFamily: "Outfit, Poppins, monospace",
             fontLigatures: true,
             lineNumbers: "on",
             automaticLayout: true,

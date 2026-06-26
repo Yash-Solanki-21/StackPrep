@@ -6,6 +6,16 @@ import TestCases from "./TestCases";
 
 export default function CodingPage({problem, onBack}) {
   
+  const fetchStats = () => {
+  axiosInstance.get("/submissions/my")
+    .then(res => setStats(res.data))
+    .catch(err => console.log(err));
+};
+
+useEffect(() => {
+  fetchStats();
+}, []);
+
   return (
     <div className="question-detail-page">
        <button
@@ -23,7 +33,8 @@ export default function CodingPage({problem, onBack}) {
         </div>
 
         <div className="right-panel">
-          <CodeEditor problem={problem}/>
+          <CodeEditor problem={problem}
+          onSubmitSuccess={fetchStats}/>
           <TestCases testCases={problem?.testCases || []}/>
         </div>
 
