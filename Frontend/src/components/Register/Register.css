@@ -1,0 +1,141 @@
+.register-auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0a0a14;
+}
+
+.register-auth-card {
+  display: flex;
+  width: 630px;
+  background: #1d1d2c;
+  border-radius: 9px;
+  overflow: hidden;
+  border: 3px solid #2a2a3a;
+}
+
+.register-auth-left {
+  flex: 0 0 270px;
+  padding: 30px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.register-auth-left h2 {
+  font-size: 22.5px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.register-auth-left p {
+  color: rgb(192, 189, 189);
+  font-size: 13px;
+}
+
+.register-illustration {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.register-illustration img {
+  max-width: 100%;
+  width: 200px;
+  height: auto;
+  border-radius: 5px;
+  object-fit: contain;
+}
+
+.register-auth-right {
+  flex: 1;
+  padding: 40px;
+  color: #fff;
+  border-left: 1px solid #2a2a3a;
+}
+
+.register-auth-right h3 {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.register-form-group {
+  margin-bottom: 10px;
+}
+
+.register-form-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #d1d1de;
+}
+
+.register-form-group input {
+  width: 100%;
+  padding: 12px 14px;
+  background: #1c1c2b;
+  border: 1px solid #4545596f;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.register-form-group input::placeholder {
+  color: #848499;
+}
+
+.register-primary-btn {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #6c5ce7, #8b7bff);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 10px 0px;
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.register-primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(108, 92, 231, 0.4);
+}
+
+.register-switch-text {
+  text-align: center;
+  font-size: 13px;
+  color: #c5c5d6;
+}
+
+.register-switch-text a {
+  color: #8b7bff;
+  text-decoration: none;
+}
+
+.form-error{
+  color: #ff4d4f;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.field-error{
+  color: #ff4d4f;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+  .auth-card {
+    flex-direction: column;
+    width: 90%;
+  }
+  .auth-left {
+    flex: 0 0 auto;
+  }
+  .auth-right {
+    border-left: none;
+    border-top: 1px solid #2a2a3a;
+  }
+}

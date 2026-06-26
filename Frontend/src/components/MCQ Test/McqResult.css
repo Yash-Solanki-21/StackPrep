@@ -1,0 +1,241 @@
+.result-page {
+  height: 100vh;
+  width: 90%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  overflow-y: auto;
+  color: #e2e8f0;
+}
+
+.result-wrapper {
+  width: 100%;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* TOP GRID */
+.result-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* CONGRATS CARD */
+.congrats-card {
+  background: #111827;
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 16px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.trophy-circle {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.trophy-emoji {
+  font-size: 32px;
+}
+
+.confetti {
+  position: absolute;
+  font-size: 12px;
+  color: #fbbf24;
+}
+
+.confetti.c1 { top: -8px; left: -6px; }
+.confetti.c2 { top: -4px; right: -10px; color: #4ade80; }
+.confetti.c3 { bottom: -6px; right: -4px; color: #60a5fa; }
+
+.congrats-card h2 {
+  margin: 0 0 6px;
+  font-size: 20px;
+  color: #fff;
+}
+
+.congrats-card p {
+  margin: 0;
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+/* STATS CARD */
+.stats-card {
+  background: #111827;
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+}
+
+.stat-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+.stat-value {
+  margin: 0;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* PERFORMANCE CARD */
+.performance-card {
+  background: #111827;
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 16px;
+  padding: 20px 24px;
+}
+
+.performance-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #94a3b8;
+  margin-bottom: 10px;
+}
+
+.performance-pct {
+  color: #fff;
+  font-weight: 600;
+}
+
+.performance-bar {
+  background: #1a2235;
+  border-radius: 8px;
+  height: 8px;
+  overflow: hidden;
+}
+
+.performance-fill {
+  height: 100%;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  transition: width 0.6s ease;
+}
+
+/* BREAKDOWN */
+.breakdown-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+}
+
+.breakdown-item {
+  background: #111827;
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.breakdown-num {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.breakdown-label {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.breakdown-item.correct .breakdown-num { color: #4ade80; }
+.breakdown-item.wrong .breakdown-num { color: #f87171; }
+.breakdown-item.unattempted .breakdown-num { color: #94a3b8; }
+
+/* REVIEW CARD */
+.review-card {
+  background: #111827;
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 16px;
+  padding: 20px 24px;
+}
+
+.review-card h4 {
+  margin: 0 0 12px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.review-card ul {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 13px;
+  color: #94a3b8;
+  line-height: 1.9;
+}
+
+/* ACTIONS */
+.result-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.result-btn-secondary,
+.result-btn-primary {
+  flex: 1;
+  padding: 13px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+.result-btn-secondary {
+  background: #1a2235;
+  border: 1px solid rgba(255,255,255,.08);
+  color: #fff;
+}
+
+.result-btn-secondary:hover { background: #232c42; }
+
+.result-btn-primary {
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  color: #fff;
+}
+
+.result-btn-primary:hover { opacity: 0.9; }
+
+@media (max-width: 700px) {
+  .result-grid {
+    grid-template-columns: 1fr;
+  }
+  .breakdown-row {
+    grid-template-columns: 1fr;
+  }
+  .result-actions {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,86 @@
+.problem-title {
+  display: flex;
+  align-items: center;
+  font-size: 19px;
+  gap: 12px;
+}
+
+.problem-number {
+  font-weight: 600;
+  min-width: 25px;
+}
+
+.problem-list-page {
+  width: 100%;
+  padding: 30px;
+}
+
+.problem-list-page h1 {
+  margin-bottom: 25px;
+}
+
+.problem-table {
+  width: 100%;
+  background: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.table-head,
+.table-row {
+  display: grid;
+  grid-template-columns: 4fr 1fr 1fr;
+  align-items: center;
+  padding: 15px 20px;
+}
+.table-head {
+  font-weight: 500;
+  
+  font-size: 25px;
+  background: #242424;
+}
+.table-head span{
+  margin-left: 13px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.table-row {
+  border-top: 1px solid #333;
+}
+.difficulty-badge {
+  display: inline-block;
+  padding: 6px 5px;
+  border-radius: 7px;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  width: 120px;
+}
+
+.easy {
+  background: rgb(40, 99, 40);
+  color: white;
+}
+
+.medium {
+  background: rgb(132, 101, 45);
+  color: white;
+}
+
+.hard {
+  background: rgb(145, 35, 35);
+  color: white;
+}
+.delete-btn {
+  width: 100px;
+  padding: 5px 15px;
+  border: none;
+  font-weight: 500;
+  font-size: 20px;
+  border-radius: 5px;
+  background: #ef4444;
+  color: white;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  opacity: 0.9;
+}

@@ -1,0 +1,143 @@
+.login-auth-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0a0a14;
+}
+
+.login-auth-card {
+  display: flex;
+  width: 620px;
+  background: #1d1d2c;
+  border-radius: 9px;
+  overflow: hidden;
+  border: 3px solid #2a2a3a;
+}
+
+.login-auth-left {
+  flex: 0 0 270px;
+  padding: 30px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-auth-left h2 {
+  font-size: 21px;
+  margin-bottom: 12px;
+}
+
+.login-auth-left p {
+  color: rgba(192, 189, 189, 0.904);
+  font-size: 14px;
+}
+
+.login-illustration {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.login-illustration img {
+  max-width: 100%;
+  width: 200px;
+  height: auto;
+  border-radius: 5px;
+  object-fit: contain;
+}
+
+.login-auth-right {
+  flex: 1;
+  font-size: 20px;
+  padding: 40px;
+  color: #fff;
+  border-left: 1px solid #2a2a3a;
+}
+
+.login-auth-right h3 {
+  margin-bottom: 20px;
+}
+
+.login-form-group {
+  margin-bottom: 16px;
+}
+
+.login-form-group label {
+  display: block;
+  font-size: 15px;
+  font-weight: 200;
+  margin-bottom: 6px;
+  color: rgba(245, 245, 245, 0.638);
+ 
+}
+
+.login-form-group input {
+  width: 100%;
+  padding: 12px 14px;
+  background: #1c1c2b;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 15px;
+   border-radius: 1.5px solid #6c5ce7;
+}
+
+.login-form-group input::placeholder {
+  color: #9191a5;
+}
+
+.login-password-field {
+  position: relative;
+}
+
+
+.login-primary-btn {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #6c5ce7, #8b7bff);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(108, 92, 231, 0.4);
+}
+
+.login-divider {
+  text-align: center;
+  color: #80808f;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.login-switch-text {
+  text-align: center;
+  font-size: 15px;
+  color: #c5c5cf;
+}
+
+.login-switch-text a {
+  color: #8b7bff;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .auth-card {
+    flex-direction: column;
+    width: 90%;
+  }
+  .auth-left {
+    flex: 0 0 auto;
+  }
+  .auth-right {
+    border-left: none;
+    border-top: 1px solid #2a2a3a;
+  }
+}

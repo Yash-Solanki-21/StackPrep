@@ -1,0 +1,137 @@
+
+.btn-run {
+  padding: 7px 18px;
+  background: #1e2538;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-run:hover { background: #2a3347; }
+
+.btn-submit {
+  padding: 7px 18px;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn-submit:hover { opacity: 0.85; }
+
+.tc-wrapper {
+  background: #111827;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  border-radius: 0 0 12px 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.tc-wrapper.closed { height: 48px; }
+.tc-wrapper.open   { height: auto; }
+
+.tc-topbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  height: 48px;
+}
+
+.tc-actions { display: flex; gap: 8px; }
+
+.btn-run {
+  padding: 6px 16px;
+  background: #1e2538;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.btn-run:hover { background: #2a3347; }
+
+.btn-submit {
+  padding: 6px 16px;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-submit:hover { opacity: 0.85; }
+
+.tc-tabs {
+  display: flex;
+  gap: 6px;
+  flex: 1;
+}
+
+.tc-tab {
+  padding: 5px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: transparent;
+  color: #64748b;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.tc-tab:hover { color: #fff; }
+
+.tc-tab.active {
+  background: rgba(99,102,241,0.15);
+  border-color: #6366f1;
+  color: #818cf8;
+}
+
+.tc-toggle {
+  margin-left: auto;
+  background: transparent;
+  border: none;
+  color: #64748b;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 4px 8px;
+  flex-shrink: 0;
+}
+
+.tc-body {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+}
+
+.tc-block { flex: 1; }
+
+.tc-block label {
+  display: block;
+  font-size: 11px;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 8px;
+}
+
+.tc-block pre {
+  background: #0d1117;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-family: 'Fira Code', monospace;
+  font-size: 13px;
+  color: #e2e8f0;
+  margin: 0;
+  white-space: pre-wrap;
+}

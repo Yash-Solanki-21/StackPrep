@@ -1,0 +1,35 @@
+# ── Environment variables ──
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# ── Dependencies ──
+node_modules/
+
+# ── Build output ──
+dist/
+build/
+
+# ── Uploaded files (local disk) ──
+public/resume/
+public/uploads/
+uploads/
+
+# ── Logs ──
+logs/
+*.log
+npm-debug.log*
+
+# ── OS files ──
+.DS_Store
+Thumbs.db
+
+# ── Editor ──
+.vscode/
+.idea/
+
+# ── Misc ──
+*.pem
+.npm

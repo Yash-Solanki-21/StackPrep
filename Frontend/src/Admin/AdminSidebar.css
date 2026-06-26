@@ -1,0 +1,102 @@
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, sans-serif;
+} */
+
+body{
+  background: #1d1d1d;
+  color: #fff;
+}
+
+.admin-page {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.admin-sidebar {
+  width: 250px;
+  background: #232323;
+  border-right: 1px solid #333;
+  padding: 20px;
+}
+
+.admin-logo {
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+
+.admin-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.admin-menu-item {
+  background: transparent;
+  font-size: 17px;
+  border: none;
+  color: #d1d5db;
+  text-align: left;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.admin-menu-item:hover {
+  background: #303030;
+}
+
+.admin-menu-item.active {
+  background: #2d2d2d;
+  color: white;
+}
+
+.admin-badge {
+  float: right;
+  background: #111827;
+  color: #fbbf24;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 16px;
+}
+
+.difficulty-box {
+  margin-top: 40px;
+}
+
+.difficulty-box h4 {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.difficulty-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.easy,
+.medium,
+.hard {
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 17px;
+}
+
+.easy {
+  background: #14532d;
+  color: white;
+}
+
+.medium {
+  background: #78350f;
+  color: white
+}
+
+.hard {
+  background: #7f1d1d;
+  color: white;
+}
