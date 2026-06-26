@@ -50,7 +50,7 @@ const registerUser = async(req, res)=>{
         });
     }
 }
-const loginUser = async(req, res)=>{
+        const loginUser = async(req, res) => {
     try {
         const {email, password} = req.body
 
@@ -71,44 +71,33 @@ const loginUser = async(req, res)=>{
                 message: "Invalid password"
             })
         }
-         const token = jwt.sign(
-                {id: user._id, username: user.username},
-                process.env.JWT_SECRET,
-                {expiresIn : "1d"}
-            )
+        const token = jwt.sign(
+            {id: user._id, username: user.username},
+            process.env.JWT_SECRET,
+            {expiresIn : "1d"}
+        )
 
-            res.cookie("token", token, {
-             httpOnly: true,
-             secure: process.env.NODE_ENV === "production",
-             sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
-            });
+        res.cookie("token", token, {
+          httpOnly: true,
+          secure: process.env.NODE_ENV === "production",
+          sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+        });
 
-           return res.status(200).json({
-             message: "Login successfully",
-                token,
-                 user: {
-                    id: user._id,
-                    username: user.username,
-                    email: user.email,
-                    role: user.role
-                    }
+        return res.status(200).json({
+          message: "Login successfully",
+          token,
+          user: {
+            id: user._id,
+            username: user.username,
+            email: user.email,
+            role: user.role
+          }
         })
 
-        localStorage.setItem(
-  "user",
-  JSON.stringify(response.data.user)
-);
-
-    const token =
-  req.cookies?.token ||
-  req.header("Authorization")?.replace("Bearer ", "");
-
-
-        
     } catch (error) {
         return res.status(500).json({
-                message: error.message
-            })
+            message: error.message
+        })
     }
 }
 const logoutUser = async (req, res) => {
