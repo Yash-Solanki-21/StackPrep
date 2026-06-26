@@ -39,7 +39,7 @@ const handleSubmit = async (e) => {
   }
   try {
     const response = await axios.post(
-      "http://localhost:3000/api/v1/user/register",
+      `${import.meta.env.VITE_API_URL}/api/v1/user/register`,
       {
         username: formData.username,
         email: formData.email,
