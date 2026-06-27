@@ -73,7 +73,7 @@ export default function Dashboard() {
           </span>
         </div>
         <p className="welcome">
-          welcome <span>{userName}</span>
+          Welcome <span>{userName}</span>
         </p>
         <div className="avatar" onClick={() => navigate("/profile")}>
           <span>{userName[0]?.toUpperCase()}</span>
