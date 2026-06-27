@@ -137,7 +137,7 @@ const handleSubmit = async (e) => {
           </form>
 
           <p className="register-switch-text">
-            Don't have an account? <Link to={"/login"}>Login</Link></p>
+            Already have an account? <Link to={"/login"}>Login</Link></p>
         </div>
       </div>
     </div>
