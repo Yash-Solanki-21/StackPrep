@@ -87,12 +87,12 @@ export default function Dashboard() {
         <section className="intro">
           <span className="eyebrow">about StackPrep</span>
           <h1 className="title">
-            crack every<br />
-            <span className="accent-text">interview.</span>
+            Grab every<br />
+            <span className="accent-text">opportunity.</span>
           </h1>
           <p className="description">
-            StackPrep pairs DSA grind with real MCQ rounds and instant
-            feedback — so you always know where you're weak.
+            Welcome to StackPrep — your all-in-one coding practice platform.Track your progress, solve curated DSA problems, attempt MCQs, and analyze your performance with real-time insights.
+            Stay consistent, improve daily, and level up your coding journey with StackPrep environment built for developers.
           </p>
           <ul className="feature-list">
             {FEATURES.map(f => (
